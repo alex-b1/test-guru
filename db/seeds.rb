@@ -13,44 +13,52 @@ categories = [
     {title: 'Химия'},
 ]
 
+categories.each { |i| Category.create(i) }
+
 tests = [
-    {title: 'Города', level: 1, category_id: 1},
-    {title: 'Животные', level: 2, category_id: 2},
-    {title: 'Вещества', level: 1, category_id: 3},
-    {title: 'Страны', level: 2, category_id: 1},
-    {title: 'Реки', level: 3, category_id: 1},
+    {title: 'Города', level: 1, category_id: Category.find_by(title: 'География').id},
+    {title: 'Животные', level: 2, category_id: Category.find_by(title: 'Биология').id},
+    {title: 'Вещества', level: 1, category_id: Category.find_by(title: 'Химия').id},
+    {title: 'Страны', level: 2, category_id: Category.find_by(title: 'География').id},
+    {title: 'Реки', level: 3, category_id: Category.find_by(title: 'География').id},
 ]
+
+tests.each { |i| Test.create(i) }
 
 questions = [
-    {body: 'Столица Италии?', test_id: 1},
-    {body: 'Сколько ног у паука?', test_id: 2},
-    {body: '7 элемент таблицы Менделеева', test_id: 3},
-    {body: 'Самая маленькая страна?', test_id: 4},
-    {body: 'Самая длинная река?', test_id: 5},
+    {body: 'Столица Италии?', test_id: Test.find_by(title: 'Города').id},
+    {body: 'Сколько ног у паука?', test_id: Test.find_by(title: 'Животные').id},
+    {body: '7 элемент таблицы Менделеева', test_id: Test.find_by(title: 'Вещества').id},
+    {body: 'Самая маленькая страна?', test_id: Test.find_by(title: 'Страны').id},
+    {body: 'Самая длинная река?', test_id: Test.find_by(title: 'Реки').id},
 ]
 
+questions.each { |i| Question.create(i) }
+
 answers = [
-    {title: 'Рим', correct: true, question_id: 1},
-    {title: 'Венеция', correct: false, question_id: 1},
-    {title: 'Неаполь', correct: false, question_id: 1},
-    {title: 'Милан', correct: false, question_id: 1},
-    {title: '8', correct: true, question_id: 2},
-    {title: '7', correct: false, question_id: 2},
-    {title: '6', correct: false, question_id: 2},
-    {title: '5', correct: false, question_id: 2},
-    {title: 'Азот', correct: true, question_id: 3},
-    {title: 'Кислород', correct: false, question_id: 3},
-    {title: 'Фтор', correct: false, question_id: 3},
-    {title: 'Натрий', correct: false, question_id: 3},
-    {title: 'Ватикан', correct: true, question_id: 4},
-    {title: 'Монако', correct: false, question_id: 4},
-    {title: 'Гамбия', correct: false, question_id: 4},
-    {title: 'Мальдивы', correct: false, question_id: 4},
-    {title: 'Амазонка', correct: true, question_id: 5},
-    {title: 'Нил', correct: false, question_id: 5},
-    {title: 'Волга', correct: false, question_id: 5},
-    {title: 'Хуанхэ', correct: false, question_id: 5},
+    {title: 'Рим', correct: true, question_id: Question.find_by(body: 'Столица Италии?').id},
+    {title: 'Венеция', correct: false, question_id: Question.find_by(body: 'Столица Италии?').id},
+    {title: 'Неаполь', correct: false, question_id: Question.find_by(body: 'Столица Италии?').id},
+    {title: 'Милан', correct: false, question_id: Question.find_by(body: 'Столица Италии?').id},
+    {title: '8', correct: true, question_id: Question.find_by(body: 'Сколько ног у паука?').id},
+    {title: '7', correct: false, question_id: Question.find_by(body: 'Сколько ног у паука?').id},
+    {title: '6', correct: false, question_id: Question.find_by(body: 'Сколько ног у паука?').id},
+    {title: '5', correct: false, question_id: Question.find_by(body: 'Сколько ног у паука?').id},
+    {title: 'Азот', correct: true, question_id: Question.find_by(body: '7 элемент таблицы Менделеева').id},
+    {title: 'Кислород', correct: false, question_id: Question.find_by(body: '7 элемент таблицы Менделеева').id},
+    {title: 'Фтор', correct: false, question_id: Question.find_by(body: '7 элемент таблицы Менделеева').id},
+    {title: 'Натрий', correct: false, question_id: Question.find_by(body: '7 элемент таблицы Менделеева').id},
+    {title: 'Ватикан', correct: true, question_id: Question.find_by(body: 'Самая маленькая страна?').id},
+    {title: 'Монако', correct: false, question_id: Question.find_by(body: 'Самая маленькая страна?').id},
+    {title: 'Гамбия', correct: false, question_id: Question.find_by(body: 'Самая маленькая страна?').id},
+    {title: 'Мальдивы', correct: false, question_id: Question.find_by(body: 'Самая маленькая страна?').id},
+    {title: 'Амазонка', correct: true, question_id: Question.find_by(body: 'Самая длинная река?').id},
+    {title: 'Нил', correct: false, question_id: Question.find_by(body: 'Самая длинная река?').id},
+    {title: 'Волга', correct: false, question_id: Question.find_by(body: 'Самая длинная река?').id},
+    {title: 'Хуанхэ', correct: false, question_id: Question.find_by(body: 'Самая длинная река?').id},
 ]
+
+answers.each { |i| Answer.create(i) }
 
 users = [
     {name: 'Alex', role: 'student'},
@@ -58,22 +66,16 @@ users = [
     {name: 'Inav', role: 'admin'},
 ]
 
-completed_tests = [
-    {result: true, test_id: 1, user_id: 1},
-    {result: false, test_id: 2, user_id: 1},
-    {result: true, test_id: 3, user_id: 1},
-    {result: true, test_id: 4, user_id: 1},
-    {result: true, test_id: 5, user_id: 1},
-    {result: true, test_id: 1, user_id: 2},
-    {result: false, test_id: 2, user_id: 2},
-    {result: false, test_id: 3, user_id: 2},
-    {result: true, test_id: 4, user_id: 2},
-    {result: false, test_id: 5, user_id: 2},
-]
-
-categories.each { |i| Category.create(i) }
-tests.each { |i| Test.create(i) }
-questions.each { |i| Question.create(i) }
 users.each { |i| User.create(i) }
-answers.each { |i| Answer.create(i) }
+
+students = User.where(role: 'student')
+completed_tests = []
+
+students.each do |i|
+  tests = Test.all
+  tests.each do |j|
+    completed_tests.push({result: [true, false].sample, test_id: j.id, user_id: i.id})
+  end
+end
+
 completed_tests.each { |i| CompletedTest.create(i) }
