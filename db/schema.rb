@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_104447) do
+ActiveRecord::Schema.define(version: 2021_05_01_073147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2021_04_29_104447) do
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "completed_tests", force: :cascade do |t|
+    t.boolean "result", default: false, null: false
+    t.bigint "test_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_completed_tests_on_test_id"
+    t.index ["user_id"], name: "index_completed_tests_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -49,12 +59,14 @@ ActiveRecord::Schema.define(version: 2021_04_29_104447) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.string "type", null: false
+    t.string "role", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "completed_tests", "tests"
+  add_foreign_key "completed_tests", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
 end
