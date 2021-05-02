@@ -1,7 +1,13 @@
 class Test < ApplicationRecord
-  def self.list_names(categity)
-    Test.joins('JOIN categories ON tests.category_id = categories.id')
-        .where(categories: {title: categity})
+  has_many :questions
+  has_many :completed_tests
+  has_many :users, through: :completed_tests
+  belongs_to :category
+  belongs_to :user
+
+  def self.list_names(category)
+    joins(:category)
+        .where(categories: {title: category})
         .order('tests.title DESC')
         .pluck(:title)
   end
