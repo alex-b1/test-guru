@@ -18,13 +18,9 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :title_categories, ->(category) {
-    joins(:category)
-      .where(categories: {title: category})
-      .order(title: :desc)
-  }
+  scope :title_categories, ->(category) { joins(:category).where(categories: {title: category}) }
 
   def self.title_categories_list(category)
-    title_categories(category).pluck
+    title_categories(category).order(title: :desc).pluck(:title)
   end
 end
