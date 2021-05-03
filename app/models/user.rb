@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :name, :email presence: true
+
   has_many :completed_tests
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id
   has_many :tests, through: :completed_tests
