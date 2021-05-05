@@ -1,0 +1,13 @@
+<h1>Новый вопрос</h1>
+
+<%= form_with model: @question, url: test_questions_path(params[:test_id]) do |f| %>
+  <div>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %><br>
+  </div>
+
+  <div>
+    <%= f.submit "Создать" %>
+  </div>
+
+<% end %>
