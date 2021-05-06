@@ -3,5 +3,5 @@ class Category < ApplicationRecord
 
   has_many :tests
 
-  scope_default { order(title: asc) }
+  default_scope { order(title: :asc) }
 end
