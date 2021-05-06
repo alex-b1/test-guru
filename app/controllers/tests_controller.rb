@@ -14,7 +14,6 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test
   end
 
   def create
@@ -47,6 +46,6 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end
