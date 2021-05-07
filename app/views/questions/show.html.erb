@@ -3,7 +3,15 @@
   <%= @question.body %>
 </p>
 
+<h2>Ответы</h2>
+<%= link_to 'Новый ответ', new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
 <p>
-  <%= link_to 'назад', test_questions_path(@question.test_id) %>
+  <%= link_to 'изменить', edit_question_path(@question) %>
+  <%= link_to 'назад', test_path(@question.test) %>
 <p>
 
