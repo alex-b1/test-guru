@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
 
-      if cookies[:path]
-        redirect_to cookies.delete :path
+      if cookies[:start_path]
+        redirect_to cookies.delete :start_path
       else
         redirect_to tests_path
       end
