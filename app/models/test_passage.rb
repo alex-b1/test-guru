@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question, on: %i[create update]
 
+  PASS_PERCENT = 85
+
   def completed?
     current_question.nil?
   end
@@ -19,6 +21,10 @@ class TestPassage < ApplicationRecord
 
   def percent
     correct_questions * 100 / test.questions.count
+  end
+
+  def success?
+    @test_passage.percent >= PASS_PERCENT
   end
 
   def position
