@@ -3,6 +3,8 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
   before_action :find_user, only: :start
 
+  def edit; end
+
   def index
     @tests = Test.all
   end
@@ -13,9 +15,6 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
-  end
-
-  def edit
   end
 
   def create
@@ -53,7 +52,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = User.first
+    @user = User.find_by(email: cookies[:email])
   end
 
   def test_params

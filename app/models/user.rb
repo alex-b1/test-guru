@@ -1,7 +1,9 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-  # validates :name, :email, presence: true
+  validates :name, :email, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, uniqueness: true
 
   has_many :test_passages
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id

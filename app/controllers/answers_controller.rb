@@ -1,15 +1,14 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[ show edit update destroy ]
 
-  def show
-  end
+  def show; end
+
+  def edit; end
 
   def new
     @answer = @question.answers.new
-  end
-
-  def edit
   end
 
   def create

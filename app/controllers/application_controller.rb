@@ -5,10 +5,11 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      redirect_to login_path, alert: 'Проверьте ваш Email и пароль'
+      cookies[:path] = request.url
+      return redirect_to login_path, alert: 'Проверьте ваш Email и пароль'
     end
 
-    cookies[:email] = current_user&.email
+    cookies[:email] = current_user.email
   end
 
   def current_user
