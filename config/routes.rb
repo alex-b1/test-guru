@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #
+
+  get 'sessions/new'
+  get 'users/new'
+
   root to: 'tests#index'
+
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+
+  resources :users, onle: :create
+  resources :sessions, onle: :create
 
   resources :tests do
     resources :questions, shallow: true do
