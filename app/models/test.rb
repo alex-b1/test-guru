@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   validates :level, numericality: {only_integer: true, greater_than: 0}
 
   has_many :questions
-  has_many :completed_tests
-  has_many :users, through: :completed_tests
+  has_many :test_passages
+  has_many :users, through: :test_passages
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: :author_id
 

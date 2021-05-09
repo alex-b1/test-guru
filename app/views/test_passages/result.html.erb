@@ -1,0 +1,19 @@
+<h1>Тест: <%= @test_passage.test.title %>. Завершен! </h1>
+
+<% if @test_passage.success? %>
+
+<p> Тест успешно пройден. Процент правильных ответов -
+  <span class="success"> <%= @test_passage.percent %> </span>
+</p>
+
+<% else %>
+
+<p> Тест не пройден. Вы ответили на -
+  <span class="fail"><%= @test_passage.percent %> </span>процентов
+</p>
+
+<% end %>
+
+<p>
+  <%= link_to 'Вернуться к тестам', tests_path %>
+<p>

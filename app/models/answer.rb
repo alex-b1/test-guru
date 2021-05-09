@@ -1,10 +1,10 @@
 class Answer < ApplicationRecord
   validates :title, presence: true
-  validate :validate_answers_max_length
+  validate :validate_answers_max_length, on: create
 
   belongs_to :question
 
-  scope :correct_answer, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
 
