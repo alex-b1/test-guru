@@ -1,0 +1,26 @@
+<p>
+  <strong>Название: </strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>Уровень: </strong>
+  <%= @test.level %>
+</p>
+
+<table>
+  <thead>
+  <th>Название</th>
+  <th colspan="3">Действие</th>
+  </thead>
+
+  <%= render partial: 'questions/question', collection: @test.questions %>
+</table>
+
+<!--<p><%#= link_to 'Новый вопрос', new_test_question_path(@test) %></p>-->
+<p><%= link_to 'Перейти к вопросам', test_questions_path(@test.id) %></p>
+
+<p><%= link_to 'Редактировать', edit_admin_test_path %></p>
+<p><%= link_to 'Назад', admin_tests_path %></p>
+
+

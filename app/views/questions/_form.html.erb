@@ -1,5 +1,3 @@
-<h1><%= question_header(@question) %></h1>
-
 <%= form_with model: [@test, @question], local: true do |form| %>
   <%= render 'shared/errors', resource: @question %>
   <p>
@@ -9,7 +7,3 @@
 
   <p><%= form.submit "Создать"%></p>
 <% end %>
-
-<p>
-  <%= link_to 'назад', test_questions_path(@question.test_id) %>
-<p>

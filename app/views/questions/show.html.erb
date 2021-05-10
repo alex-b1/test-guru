@@ -10,8 +10,6 @@
   <%= render @question.answers %>
 </ol>
 
-<p>
-  <%= link_to 'изменить', edit_question_path(@question) %>
-  <%= link_to 'назад', test_path(@question.test) %>
-<p>
+<%= link_to 'Редактировать', edit_question_path(@question) %>
+<%= link_to 'Назад', admin_test_path(@question.test) %>
 
