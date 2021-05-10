@@ -1,0 +1,14 @@
+.nav.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logout {
+  margin-left: 20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+}

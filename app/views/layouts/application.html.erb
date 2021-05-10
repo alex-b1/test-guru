@@ -11,6 +11,19 @@
 </head>
 
 <body>
+
+<% if logged_in? %>
+  <div class="nav user">
+    <div class="left">
+      <div class="main"><%= link_to 'Тест Гуру', root_path %></div>
+    </div>
+    <div class="right">
+      <div class="welcome">Добро пожаловать, <b><%= current_user.email %></b> Гуру</div>
+      <div class="logout"><%= link_to 'Выйти', logout_path %></div>
+    </div>
+  </div>
+<% end %>
+
 <%= yield %>
 <%= render 'shared/footer' %>
 </body>
