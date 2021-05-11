@@ -2,16 +2,16 @@
   <%= render 'shared/errors', resource: @test %>
 
   <p>
-    <%= form.label :title %> <br>
+    <%= form.label :title, 'Название' %> <br>
     <%= form.text_field :title%> <br>
   </p>
 
   <p>
-    <%= form.label :level %> <br>
+    <%= form.label :level, 'Уровень' %> <br>
     <%= form.text_field :level%> <br>
   </p>
   <p>
-    <%= form.label :category_id %> <br>
+    <%= form.label :category_id, 'Категория' %> <br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true%> <br>
   </p>
 

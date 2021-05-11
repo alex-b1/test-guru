@@ -1,7 +1,16 @@
-.nav.user {
+.nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px;
+}
+
+.nav.user {
+  background-color: #f8baba;
+}
+
+.nav.admin {
+  background-color: #ebccd1;
 }
 
 .logout {

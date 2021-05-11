@@ -1,5 +1,4 @@
 class Admin::BaseController < ApplicationController
-
   layout 'admin'
 
   before_action :authenticate_user!
@@ -10,6 +9,4 @@ class Admin::BaseController < ApplicationController
   def admin_redirected!
     redirect_to root_path, alert: 'Вы не авторизованы для просмтора данной страницы.' unless current_user.is_a?(Admin)
   end
-
-
 end
