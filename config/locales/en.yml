@@ -35,6 +35,23 @@ en:
         header: "Create a new answer"
       edit:
         header: "Edit answer"
+    questions:
+      show:
+        header: "Title"
+        answers: "Answers"
+        new_answer: "New answer"
+      new:
+        header: "Create a new question"
+      edit:
+        header: "Edit question"
+      index:
+        header: "List of questions"
+        create: "Create a new question"
+        table_header: "Title"
+        table_level: "Level"
+        table_count: "Count"
+        table_action: "Action"
+        to_tests: "To tests"
 
   helpers:
     submit:
@@ -44,6 +61,9 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      question:
+        create: "Create question"
+        update: "Update question"
     label:
       test:
         title: "Title"
@@ -52,6 +72,8 @@ en:
       answer:
         title: "Title"
         correct: "Correct"
+      question:
+        body: "Title"
     select:
       prompt: "Please select category"
 

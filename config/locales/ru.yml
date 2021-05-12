@@ -38,6 +38,23 @@ ru:
         header: "Создать новый ответ"
       edit:
         header: "Редактировать ответ"
+    questions:
+      show:
+        header: "Название"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+      new:
+        header: "Создать новый вопрос"
+      edit:
+        header: "Редактировать вопрос"
+      index:
+        header: "Список вопросов"
+        create: "Создать новый вопрос"
+        table_header: "Название"
+        table_level: "Уровень"
+        table_count: "Всего вопросов"
+        table_action: "Действие"
+        to_tests: "Перейти к тестам"
 
 
   helpers:
@@ -48,6 +65,9 @@ ru:
       answer:
         create: "Создать Ответ"
         update: "Обновить Ответ"
+      question:
+        create: "Создать Вопрос"
+        update: "Обновить Вопрос"
     label:
       test:
         title: "Название"
@@ -56,6 +76,8 @@ ru:
       answer:
         title: "Название"
         correct: "Верный"
+      question:
+        body: "Название"
     select:
       prompt: "Пожайлуста выберите категорию"
 
