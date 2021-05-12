@@ -7,6 +7,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_redirected!
-    redirect_to root_path, alert: 'Вы не авторизованы для просмтора данной страницы.' unless current_user.is_a?(Admin)
+    redirect_to root_path, alert: 'Вы не авторизованы для просмтора данной страницы.' unless current_user.admin?
   end
 end

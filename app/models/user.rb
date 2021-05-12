@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   before_validation :set_role, on: :create
 
+  def admin?
+    is_a?(Admin)
+  end
+
   def test_by_level(level)
     tests.where(level: level)
   end
