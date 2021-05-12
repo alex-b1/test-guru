@@ -24,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    @test_passage.percent >= PASS_PERCENT
+    percent >= PASS_PERCENT
   end
 
   def position
