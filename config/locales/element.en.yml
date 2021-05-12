@@ -5,6 +5,7 @@ en:
 
     link:
       back: "Back"
+      ahead: "Ahead"
       edit: "Edit"
       show: "Show"
       delete: "Delete"

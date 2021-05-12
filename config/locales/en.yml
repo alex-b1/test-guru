@@ -5,6 +5,16 @@ en:
     index:
       header: "List of tests"
 
+  test_passages:
+    result:
+
+    show:
+
+  nav:
+    title: "TestGuru"
+    panel: "TestGuru Admin panel"
+    project: "Guru"
+
   admin:
     tests:
       index:
@@ -80,6 +90,13 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+      correct_answers: "Percentage of correct answers"
+      fail_test: "Test failed"
+      result: "You answered - %{percent} percent!"
+      to_tests: "Totests"
+    show:
+      pass: "Pass  %{title} Test"
+      question: "Question № %{number} of %{count}"
 
   shared:
     errors:
@@ -121,4 +138,5 @@ en:
         header: "Forgot your password?"
         email: "Email"
         reset_instructions: "Send me reset password instructions"
+
 

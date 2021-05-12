@@ -1,6 +1,11 @@
 ru:
   hello: "Привет мир"
 
+  nav:
+    title: "Тест Гуру"
+    panel: "Тест Гуру Админ панель"
+    project: "Гуру"
+
   tests:
     index:
       header: "Список тестов"
@@ -56,7 +61,6 @@ ru:
         table_action: "Действие"
         to_tests: "Перейти к тестам"
 
-
   helpers:
     submit:
       test:
@@ -84,6 +88,13 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      success: "Тест успешно пройден. Процент правильных ответов - %{percent} "
+      fail_test: "Тест не пройден"
+      result: "Вы ответили на - %{percent} процентов!"
+      to_tests: "Перейти к тестам"
+    show:
+      pass: "Пройти %{title} Тест"
+      question: "Вопрос № %{number} из %{count}"
 
   shared:
     errors:

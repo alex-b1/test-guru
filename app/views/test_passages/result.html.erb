@@ -1,21 +1,19 @@
 <% if @test_passage.success? %>
 
 <p>
-  <h1><%=  t('.header', title: @test_passage.test.title) %> </h1>
-  <span> Процент правильных ответов - </span>
-  <span class="success"> <%= @test_passage.percent %> </span>
+  <h1><%= t('.header', title: @test_passage.test.title) %> </h1>
+  <span> <%= t('.success', percent: @test_passage.percent) %> </span>
 </p>
 
 <% else %>
 
 <p>
-  <h1> Тест не пройден. </h1>
-  <span> Вы ответили на - </span>
-  <span class="fail"><%= @test_passage.percent %> </span>процентов
+  <h1> <%= t('.fail_test') %> </h1>
+  <span> <%= t('.result', percent: @test_passage.percent) %> </span>
 </p>
 
 <% end %>
 
 <p>
-  <%= link_to 'Вернуться к тестам', tests_path %>
+  <%= link_to t('.to_tests'), tests_path %>
 <p>

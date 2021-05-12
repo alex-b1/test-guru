@@ -1,13 +1,9 @@
-<h1>Пройти <%= @test_passage.test.title %> Тест</h1>
-
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
+<h1> <%= t('.pass', title: @test_passage.test.title) %> </h1>
+<b><%= @test_passage.current_question.body %></b>
 
 <p>
   <b>
-    Вопрос № <%= @test_passage.position %> из
-    <%= @test_passage.test.questions.count %>
+    <%= t('.question', number: @test_passage.position, count: @test_passage.test.questions.count)%>
   </b>
 </p>
 
@@ -19,5 +15,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Дальше' %></p>
+  <p><%= form.submit t('element.link.ahead') %></p>
 <% end %>
