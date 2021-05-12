@@ -1,9 +1,9 @@
 <div class="nav admin">
   <div class="left">
-    <div class="main"><%= link_to 'Тест Гуру', root_path %></div>
+    <div class="main"><%= link_to t('nav.title'), root_path %></div>
   </div>
   <div class="right">
-    <div class="welcome">Тест Гуру Админ панель <b><%= current_user.first_name %></b> Гуру</div>
-    <div class="logout"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></div>
+    <div class="welcome"><%= t('nav.panel') %><b><%= current_user.first_name %></b><%= t('nav.project') %></div>
+    <div class="logout"><%= link_to t('element.link.logout'), destroy_user_session_path, method: :delete %></div>
   </div>
 </div>

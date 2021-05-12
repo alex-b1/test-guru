@@ -1,13 +1,13 @@
-<h1>Список тестов</h1>
+<h1><%= t('.header') %></h1>
 
-<p><%=link_to 'Создать новый тест', new_admin_test_path %></p>
+<p><%=link_to t('.create'), new_admin_test_path %></p>
 
 <table>
   <theader>
-    <th>Название</th>
-    <th>Уровень</th>
-    <th>Всего вопросов</th>
-    <th colspan="">Действия</th>
+    <th><%= t('.table_header') %></th>
+    <th><%= t('.table_level') %></th>
+    <th><%= t('.table_count') %></th>
+    <th colspan=""><%= t('.table_action') %></th>
   </theader>
 
   <%= render @tests %>

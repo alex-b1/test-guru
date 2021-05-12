@@ -1,9 +1,9 @@
 <%= form_with model: [:admin, @test, @question], local: true do |form| %>
   <%= render 'shared/errors', resource: @question %>
   <p>
-    <%= form.label :body , 'Название' %> <br>
+    <%= form.label :body %> <br>
     <%= form.text_field :body%> <br>
   </p>
 
-  <p><%= form.submit "Сохранить"%></p>
+  <p><%= form.submit %></p>
 <% end %>

@@ -2,16 +2,16 @@
   <%=render 'shared/errors', resource: @answer %>
 
   <p>
-    <%= form.label :title, 'Название'%>
+    <%= form.label :title%>
     <%= form.text_field :title, id: :answer_title%>
   </p>
 
   <p>
-    <%= form.label :correct, 'Верный' %>
+    <%= form.label :correct %>
     <%= form.check_box :correct, id: :answer_correct %>
   </p>
 
   <div class="actions">
-    <%= form.submit "Сохранить"%>
+    <%= form.submit %>
   </div>
 <% end %>

@@ -1,33 +1,142 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  tests:
+    index:
+      header: "List of tests"
+
+  test_passages:
+    result:
+
+    show:
+
+  nav:
+    title: "TestGuru"
+    panel: "TestGuru Admin panel"
+    project: "Guru"
+
+  admin:
+    tests:
+      index:
+        header: "List of tests"
+        create: "Create a new test"
+        table_header: "Title"
+        table_level: "Level"
+        table_count: "Count"
+        table_action: "Ation"
+      create:
+        success: "Test was successfully created."
+      new:
+        header: "Create a new test"
+      show:
+        to_questions: "To_questions"
+        header: "Title"
+        level: "level"
+        table_header: "Title"
+        table_action: "Action"
+      edit:
+        header: "Edit test"
+    answers:
+      show:
+        header: "Title"
+        answer: "Answer"
+        correct: "Correct"
+      new:
+        header: "Create a new answer"
+      edit:
+        header: "Edit answer"
+    questions:
+      show:
+        header: "Title"
+        answers: "Answers"
+        new_answer: "New answer"
+      new:
+        header: "Create a new question"
+      edit:
+        header: "Edit question"
+      index:
+        header: "List of questions"
+        create: "Create a new question"
+        table_header: "Title"
+        table_level: "Level"
+        table_count: "Count"
+        table_action: "Action"
+        to_tests: "To tests"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+      question:
+        create: "Create question"
+        update: "Update question"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Сategory"
+      answer:
+        title: "Title"
+        correct: "Correct"
+      question:
+        body: "Title"
+    select:
+      prompt: "Please select category"
+
+  test_passages:
+    result:
+      header: "The %{title} Test was Completed!"
+      correct_answers: "Percentage of correct answers"
+      fail_test: "Test failed"
+      result: "You answered - %{percent} percent!"
+      to_tests: "Totests"
+    show:
+      pass: "Pass  %{title} Test"
+      question: "Question № %{number} of %{count}"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  users:
+    sessions:
+      new:
+        header: "Log in"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me?"
+        login: "Log in"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        not_confirmation: "Didn't receive confirmation instructions?"
+        not_unlock: "Didn't receive unlock instructions?"
+        signin with: "Sign in with"
+    registrations:
+      new:
+        header: "Sign up"
+        first_name: "First_name"
+        last_name: "Last_name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password_confirmation"
+        signup: "Sign up"
+    passwords:
+      new:
+        header: "Forgot your password?"
+        email: "Email"
+        reset_instructions: "Send me reset password instructions"
+
+

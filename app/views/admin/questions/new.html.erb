@@ -1,4 +1,4 @@
-<h1>Создать новый Вопрос, <%= @test.title %> </h1>
+<h1><%= t('.header') %> <%= @test.title %> </h1>
 
 <%= render 'form'%>
-<%= link_to 'Назад', admin_test_path(@question.test) %>
+<%= link_to t('element.link.back'), admin_test_path(@question.test) %>
