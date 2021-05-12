@@ -1,0 +1,14 @@
+ru:
+  element:
+    button:
+      start: "Начать"
+
+    link:
+      back: "Назад"
+      edit: "Редактировать"
+      show: "Показать"
+      delete: "Удалить"
+      logout: "Выйти"
+
+    popup:
+      confirm: "Вы уверены ?"

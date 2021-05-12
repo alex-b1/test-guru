@@ -1,0 +1,108 @@
+ru:
+  hello: "Привет мир"
+
+  tests:
+    index:
+      header: "Список тестов"
+      table_header: "Название"
+      table_level: "Уровень"
+      table_count: "Всего вопросов"
+
+  admin:
+    tests:
+      index:
+        header: "Список тестов"
+        create: "Создать новый тест"
+        table_header: "Название"
+        table_level: "Уровень"
+        table_count: "Всего вопросов"
+        table_action: "Действие"
+      create:
+        success: "Тест успешно создан."
+      new:
+        header: "Создать новый тест"
+      show:
+        to_questions: "Перейти к вопросам"
+        header: "Название"
+        level: "Уровень"
+        table_header: "Название"
+        table_action: "Действие"
+      edit:
+        header: "Редактировать тест"
+    answers:
+      show:
+        header: "Название"
+        answer: "Ответ"
+        correct: "Верный"
+      new:
+        header: "Создать новый ответ"
+      edit:
+        header: "Редактировать ответ"
+
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      answer:
+        create: "Создать Ответ"
+        update: "Обновить Ответ"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      answer:
+        title: "Название"
+        correct: "Верный"
+    select:
+      prompt: "Пожайлуста выберите категорию"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        name: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы закончили ТестГуру тест!'
+
+  users:
+    sessions:
+      new:
+        header: "Авторизоваться"
+        email: "Email"
+        password: "Пароль"
+        remember_me: "Запомнить меня"
+        login: "Войти"
+    shared:
+      links:
+        login: "Войти"
+        signup: "Зарегистрироваться"
+        forgot_password: "Забыли пароль?"
+        not_confirmation: "Не получили инструкции по подтверждению?"
+        not_unlock: "Не получили инструкции по разблокировке?"
+        signin_with: "Войдите в систему с помощью"
+    registrations:
+      new:
+        header: "Зарегистироваться"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        signup: "Отправить"
+    passwords:
+      new:
+        header: "Забыли пароль?"
+        email: "Email"
+        reset_instructions: "отправить инструкции по сбросу пароля"
+

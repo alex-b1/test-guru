@@ -1,0 +1,15 @@
+en:
+  element:
+    button:
+      start: "Start"
+
+    link:
+      back: "Back"
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+      logout: "Logout"
+      create: "Create new %{title}"
+
+    popup:
+      confirm: "Are you sure ?"

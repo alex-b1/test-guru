@@ -4,6 +4,6 @@
   </div>
   <div class="right">
     <div class="welcome">Тест Гуру Админ панель <b><%= current_user.first_name %></b> Гуру</div>
-    <div class="logout"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></div>
+    <div class="logout"><%= link_to t('element.link.logout'), destroy_user_session_path, method: :delete %></div>
   </div>
 </div>

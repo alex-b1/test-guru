@@ -1,14 +1,16 @@
-<h1>Тест: <%= @test_passage.test.title %>. Завершен! </h1>
-
 <% if @test_passage.success? %>
 
-<p> Тест успешно пройден. Процент правильных ответов -
+<p>
+  <h1><%=  t('.header', title: @test_passage.test.title) %> </h1>
+  <span> Процент правильных ответов - </span>
   <span class="success"> <%= @test_passage.percent %> </span>
 </p>
 
 <% else %>
 
-<p> Тест не пройден. Вы ответили на -
+<p>
+  <h1> Тест не пройден. </h1>
+  <span> Вы ответили на - </span>
   <span class="fail"><%= @test_passage.percent %> </span>процентов
 </p>
 

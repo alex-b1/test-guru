@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   devise_for :users,
              path: :gurus,
              path_names: {sign_in: :login, sign_out: :logout},
-             controllers: { registrations: "users/registrations"}
+             controllers: {
+                 registrations: "users/registrations",
+                 sessions: "users/sessions",
+                 passwords: "users/passwords",
+             }
 
   resources :tests, only: :index do
     member do
