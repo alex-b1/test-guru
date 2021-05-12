@@ -10,7 +10,6 @@ en:
       show: "Show"
       delete: "Delete"
       logout: "Logout"
-      create: "Create new %{title}"
 
     popup:
       confirm: "Are you sure ?"
