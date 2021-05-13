@@ -1,24 +1,19 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-8">
         <% if @test_passage.success? %>
-        <p>
-          <h1><%= t('.header', title: @test_passage.test.title) %> </h1>
-          <span> <%= t('.success', percent: @test_passage.percent) %> </span>
-        </p>
-        <hr>
-
+            <div class="h4"><%= t('.header', title: @test_passage.test.title) %> </div>
+            <hr>
+            <div> <%= t('.success', percent: @test_passage.percent) %> </div>
         <% else %>
-
-        <p>
-          <h1> <%= t('.fail_test') %> </h1>
-          <span> <%= t('.result', percent: @test_passage.percent) %> </span>
-        </p>
-        <hr>
-
+            <div class="h4"> <%= t('.fail_test') %> </div>
+            <hr>
+            <div> <%= t('.result', percent: @test_passage.percent) %> </div>
         <% end %>
 
-        <p>
-          <%= link_to t('.to_tests'), tests_path %>
-        <p>
+        <%= button_to t('.to_tests'),
+                      tests_path,
+                      class: "btn btn-secondary btn-sm mt-3",
+                      method: :get %>
+
     </div>
 </div>
