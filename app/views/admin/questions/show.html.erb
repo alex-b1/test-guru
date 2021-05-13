@@ -1,14 +1,29 @@
-<p>
-  <strong><%= t('.header') %>: </strong>
-  <%= @question.body %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="h4">
+      <strong><%= t('.header') %>: </strong>
+        <%= @question.body %>
+    </div>
 
-<h2><%= t('.answers') %>:</h2>
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+    <hr>
 
-<ol>
-  <%= render partial: 'admin/answers/answer', collection: @question.answers %>
-</ol>
+    <div class="h5 mt-2"><%= t('.answers') %>:</div>
 
-<%= link_to t('element.link.back'), admin_test_path(@question.test) %>
+    <table class="table align-middle mt-4">
+      <%= render partial: 'admin/answers/answer', collection: @question.answers %>
+    </table>
+
+    <div class="d-md-flex justify-content-between mt-4">
+      <%= button_to t('.new_answer'),
+                    new_admin_question_answer_path(@question),
+                    class:"btn btn-success btn-sm",
+                    method: :get
+      %>
+      <%= button_to t('element.link.back'),
+                    admin_test_path(@question.test),
+                    class: "btn btn-secondary btn-sm",
+                    method: :get %>
+    </div>
+  </div>
+</div>
 

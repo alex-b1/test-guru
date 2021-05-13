@@ -2,8 +2,6 @@
   <div class="col col-md-8">
     <h1> <%= t('.header') %> </h1>
 
-    <p><%=button_to t('.create'), new_admin_test_path, class:"btn btn-success", method: :get %></p>
-
     <table class="table align-middle mt-4">
       <thead class="table-light">
       <th scope="col"><%= t('.table_header') %></th>
@@ -16,6 +14,9 @@
 
       <%= render @tests %>
     </table>
+
+    <%=button_to t('.create'), new_admin_test_path, class:"btn btn-success btn-sm", method: :get %>
+
   </div>
 </div>
 
