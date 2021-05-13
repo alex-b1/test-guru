@@ -1,7 +1,6 @@
 <tr>
   <td><%= test.title %></td>
-  <td><%= test.level %></td>
-  <td><%= test.questions.size %></td>
-
-  <td><%= button_to t('element.button.start'), start_test_path(test) %></td>
+  <td class="text-center"><%= test.level %></td>
+  <td class="text-center"><%= test.questions.size %></td>
+  <td><%= button_to t('element.button.start'), start_test_path(test), class: "btn btn-outline-secondary" %></td>
 </tr>
