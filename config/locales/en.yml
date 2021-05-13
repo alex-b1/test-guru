@@ -95,8 +95,11 @@ en:
       result: "You answered - %{percent} percent!"
       to_tests: "Totests"
     show:
-      pass: "Pass  %{title} Test"
+      pass: "Pass %{title} Test"
       question: "Question № %{number} of %{count}"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   shared:
     errors:

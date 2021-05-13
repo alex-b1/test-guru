@@ -30,15 +30,14 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-
 # LOCALIZATION
-
 gem 'rails-i18n', '~> 6.0.0'
 
 # AUTH
-#
+gem 'devise', '~> 4.0'\
 
-gem 'devise', '~> 4.0'
+# NETWORKING
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
