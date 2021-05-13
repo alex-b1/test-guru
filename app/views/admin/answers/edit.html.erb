@@ -1,8 +1,15 @@
-<h1><%= t('.header') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="d-md-flex gap-2">
+      <div class="h4"> <%= t('.header') %> - <%= @answer.question.body %> </div>
+    </div>
+    <hr>
 
-<p>
-  <%= @answer.question.body %>
-</p>
+    <%= render 'form' %>
 
-<%= render 'form' %>
-<%= link_to t('element.link.back'), admin_question_path(@answer.question) %>
+    <%= button_to t('element.link.back'),
+                  admin_question_path(@answer.question),
+                  class: "btn btn-secondary btn-sm mt-3",
+                  method: :get %>
+  </div>
+</div>

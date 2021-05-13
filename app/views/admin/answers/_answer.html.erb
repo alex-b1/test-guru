@@ -1,10 +1,19 @@
-<li>
+<tr>
   <td><%= answer.title %></td>
-  <td><%= link_to t('element.link.show'), admin_answer_path(answer) %></td>
-  <td><%= link_to t('element.link.edit'), edit_admin_answer_path(answer) %></td>
-  <td><%= link_to t('element.link.delete'),
+  <td class="text-center"><%=
+                  link_to t('element.link.show'),
+                  admin_answer_path(answer),
+                  class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+  <td class="text-center"><%=
+                  link_to t('element.link.edit'),
+                  edit_admin_answer_path(answer),
+                  class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+  <td class="text-center"><%= link_to t('element.link.delete'),
                   admin_answer_path(answer),
                   method: :delete,
+                  class: "btn btn-outline-secondary btn-sm",
                   data: {confirm: t('element.popup.confirm')} %>
   </td>
-</li>
+</tr>

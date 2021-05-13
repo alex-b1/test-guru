@@ -1,12 +1,20 @@
 <tr>
   <td><%= test.title %></td>
-  <td><%= test.level %></td>
-  <td><%= test.questions.size %></td>
-  <td><%= link_to t('element.link.show'), admin_test_path(test) %></td>
-  <td><%= link_to t('element.link.edit'), edit_admin_test_path(test) %></td>
-  <td><%= link_to t('element.link.delete'),
+  <td class="text-center"><%= test.level %></td>
+  <td class="text-center"><%= test.questions.size %></td>
+  <td class="text-center"><%= link_to t('element.link.show'),
+                  admin_test_path(test),
+                  class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+  <td class="text-center"><%= link_to t('element.link.edit'),
+                  edit_admin_test_path(test),
+                  class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+  <td class="text-center"><%= link_to t('element.link.delete'),
                   admin_test_path(test),
                   method: :delete,
-                  data: { confirm: t('element.popup.confirm')} %>
+                  data: { confirm: t('element.popup.confirm')},
+                  class: "btn btn-outline-secondary btn-sm" %>
   </td>
 </tr>
+

@@ -1,19 +1,28 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
-  <%= render 'shared/errors', resource: @test %>
+<div class="row mt-3">
+  <div class="col col-md-8">
+    <div class="form-group mt-3">
+      <%= form_with model: [:admin, @test], local: true do |form| %>
+        <%= render 'shared/errors', resource: @test %>
 
-  <p>
-    <%= form.label :title %> <br>
-    <%= form.text_field :title%> <br>
-  </p>
+        <div>
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
 
-  <p>
-    <%= form.label :level %> <br>
-    <%= form.text_field :level%> <br>
-  </p>
-  <p>
-    <%= form.label :category_id %> <br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true%> <br>
-  </p>
+        <div>
+          <%= form.label :level %>
+          <%= form.text_field :level, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :category_id %>
+          <%= form.collection_select :category_id,
+              Category.all, :id, :title, prompt: true, class: "form-select"%>
+        </div>
 
-  <p><%= form.submit %></p>
-<% end %>
+        <div class="actions">
+          <%= form.submit class: "btn btn-primary mt-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

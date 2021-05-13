@@ -1,9 +1,20 @@
-<%= form_with model: [:admin, @test, @question], local: true do |form| %>
-  <%= render 'shared/errors', resource: @question %>
-  <p>
-    <%= form.label :body %> <br>
-    <%= form.text_field :body%> <br>
-  </p>
+<div class="row mt-3">
+  <div class="col col-md-8">
+    <div class="form-group mt-3">
 
-  <p><%= form.submit %></p>
-<% end %>
+      <%= form_with model: [:admin, @test, @question], local: true do |form| %>
+        <%= render 'shared/errors', resource: @question %>
+        <div>
+          <%= form.label :body %> <br>
+          <%= form.text_field :body, class: "form-control" %> <br>
+        </div>
+
+        <div class="actions">
+          <%= form.submit class: "btn btn-primary mt-3" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

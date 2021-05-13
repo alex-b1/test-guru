@@ -1,15 +1,24 @@
-<h1><%= t('.header') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="h4"> <%= t('.header') %> </div>
 
-<p><%=link_to t('.create'), new_admin_test_path %></p>
+    <table class="table align-middle mt-4">
+      <thead class="table-light">
+      <th scope="col"><%= t('.table_header') %></th>
+      <th scope="col" class="text-center"><%= t('.table_level') %></th>
+      <th scope="col" class="text-center"><%= t('.table_count') %></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      </thead>
 
-<table>
-  <theader>
-    <th><%= t('.table_header') %></th>
-    <th><%= t('.table_level') %></th>
-    <th><%= t('.table_count') %></th>
-    <th colspan=""><%= t('.table_action') %></th>
-  </theader>
+      <%= render @tests %>
+    </table>
 
-  <%= render @tests %>
-</table>
+    <%=button_to t('.create'), new_admin_test_path, class:"btn btn-success btn-sm", method: :get %>
+
+  </div>
+</div>
+
+
 
