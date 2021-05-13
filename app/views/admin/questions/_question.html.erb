@@ -1,10 +1,16 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('element.link.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('element.link.edit'), edit_admin_question_path(question) %></td>
-  <td><%= link_to t('element.link.delete'),
+  <td class="text-center"><%= link_to t('element.link.show'),
+                  admin_question_path(question),
+                  class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+  <td class="text-center"><%= link_to t('element.link.edit'),
+                  edit_admin_question_path(question),
+                  class: "btn btn-outline-secondary btn-sm" %></td>
+  <td class="text-center"><%= link_to t('element.link.delete'),
                   admin_question_path(question),
                   method: :delete,
+                  class: "btn btn-outline-secondary btn-sm",
                   data: {confirm: t('element.popup.confirm')} %>
   </td>
 </tr>

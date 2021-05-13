@@ -20,9 +20,21 @@
     </table>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-      <p><%= button_to t('.to_questions'), admin_test_questions_path(@test.id), class: "btn btn-secondary btn-sm" %></p>
-      <p><%= button_to t('element.link.edit'), edit_admin_test_path, class: "btn btn-secondary btn-sm" %></p>
-      <p><%= button_to t('element.link.back'), admin_tests_path, class: "btn btn-secondary btn-sm" %></p>
+      <p><%= button_to t('.to_questions'),
+                       admin_test_questions_path(@test.id),
+                       class: "btn btn-secondary btn-sm",
+                       method: :get %>
+      </p>
+      <p><%= button_to t('element.link.edit'),
+                       edit_admin_test_path,
+                       class: "btn btn-secondary btn-sm",
+                       method: :get %>
+      </p>
+      <p><%= button_to t('element.link.back'),
+                       admin_tests_path,
+                       class: "btn btn-secondary btn-sm",
+                       method: :get %>
+      </p>
     </div>
   </div>
 </div>
