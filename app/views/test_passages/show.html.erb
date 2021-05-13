@@ -1,5 +1,5 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-10">
+  <div class="col col-md-8">
     <h1> <%= t('.pass', title: @test_passage.test.title) %> </h1>
     <hr>
     <div class="d-flex justify-content-between"
@@ -14,9 +14,8 @@
             <%= b.check_box id: "answer_ids#{b.object.id}", class: "form-check-input"%>
           </div>
         <% end %>
-        <p><%= form.submit t('element.link.ahead'), class: "btn btn-primary mt-3" %></p>
+        <%= form.submit t('element.link.ahead'), class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
-
   </div>
 </div>
