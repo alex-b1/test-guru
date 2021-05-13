@@ -1,24 +1,28 @@
-<p>
-  <strong><%= t('.header') %>: </strong>
-  <%= @test.title %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="row row-cols-2 ">
+      <div class="h4">
+        <strong><%= t('.header') %>: </strong>
+        <%= @test.title %>
+      </div>
+      <div class="h5 text-end">
+        <strong><%= t('.level') %>: </strong>
+        <%= @test.level %>
+      </div>
+    </div>
 
-<p>
-  <strong><%= t('.level') %>: </strong>
-  <%= @test.level %>
-</p>
+    <table class="table align-middle mt-4">
+      <thead class="table-light">
+        <th scope="col" ><%= t('.table_header') %>:</th>
+        <th colspan="3" scope="col" class="text-center"><%= t('.table_action') %>:</th>
+      </thead>
+      <%= render partial: 'admin/questions/question', collection: @test.questions %>
+    </table>
 
-<table>
-  <thead>
-  <th><%= t('.table_header') %>:</th>
-  <th colspan="3"><%= t('.table_action') %>:</th>
-  </thead>
-  <%= render partial: 'admin/questions/question', collection: @test.questions %>
-</table>
-
-<p><%= link_to t('.to_questions'), admin_test_questions_path(@test.id) %></p>
-
-<p><%= link_to t('element.link.edit'), edit_admin_test_path %></p>
-<p><%= link_to t('element.link.back'), admin_tests_path %></p>
-
-
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+      <p><%= button_to t('.to_questions'), admin_test_questions_path(@test.id), class: "btn btn-secondary btn-sm" %></p>
+      <p><%= button_to t('element.link.edit'), edit_admin_test_path, class: "btn btn-secondary btn-sm" %></p>
+      <p><%= button_to t('element.link.back'), admin_tests_path, class: "btn btn-secondary btn-sm" %></p>
+    </div>
+  </div>
+</div>
