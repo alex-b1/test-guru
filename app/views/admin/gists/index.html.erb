@@ -1,0 +1,20 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <div class="h4"> <%= t('.header') %> </div>
+
+    <table class="table align-middle mt-4">
+      <thead class="table-light">
+      <th class="text-center"><%= t('.table_quesction') %></th>
+      <th class="text-center"><%= t('.table_url') %></th>
+      <th class="text-center"><%= t('.table_email') %></th>
+      </thead>
+
+      <%= render @gists %>
+    </table>
+
+    <%= button_to t('element.link.back'),
+                  admin_tests_path,
+                  class: "btn btn-secondary btn-sm mt-3",
+                  method: :get %>
+  </div>
+</div>

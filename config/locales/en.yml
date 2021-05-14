@@ -1,6 +1,10 @@
 en:
   hello: "Hello world"
 
+  services:
+    gist:
+      description: "A question about %{title} from TestGuru"
+
   tests:
     index:
       header: "List of tests"
@@ -16,6 +20,12 @@ en:
     project: "Guru"
 
   admin:
+    gists:
+      index:
+        header: "Gists list"
+        table_quesction: "Вопрос"
+        table_url: "Link to gist"
+        table_email: "User email"
     tests:
       index:
         header: "List of tests"
@@ -98,8 +108,9 @@ en:
       pass: "Pass %{title} Test"
       question: "Question № %{number} of %{count}"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created - %{url}"
       failure: "An error occurred while saving gist"
+      github: "github"
 
   shared:
     errors:
