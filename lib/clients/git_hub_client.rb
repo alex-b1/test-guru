@@ -1,4 +1,6 @@
 class GitHubClient
+  attr_reader :http_client
+
   def initialize
     @http_client = setup_http_client
   end

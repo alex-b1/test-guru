@@ -9,6 +9,10 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
+  def success?
+    @client.http_client.last_response.data&.html_url&.present?
+  end
+
   private
 
   def gist_params
