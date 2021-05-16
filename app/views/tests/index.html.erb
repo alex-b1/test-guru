@@ -4,10 +4,16 @@
 
     <table class="table align-middle mt-4">
       <thead class="table-light">
-        <th scope="col"><%= t('.table_header') %></th>
-        <th scope="col" class="text-center"><%= t('.table_level') %></th>
-        <th scope="col" class="text-center"><%= t('.table_count') %></th>
-        <th scope="col"></th>
+        <tr>
+          <th scope="col" class="sort-by-title pointer">
+            <%= t('.table_header') %>
+            <%= octicon 'arrow-up', class: 'text-success' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th scope="col" class="text-center"><%= t('.table_level') %></th>
+          <th scope="col" class="text-center"><%= t('.table_count') %></th>
+          <th scope="col"></th>
+        </tr>
       </thead>
 
       <%= render @tests %>
