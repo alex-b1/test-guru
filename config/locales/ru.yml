@@ -1,6 +1,10 @@
 ru:
   hello: "Привет мир"
 
+  services:
+    gist:
+      description: "Вопрос о %{title} из TestGuru"
+
   nav:
     title: "Тест Гуру"
     panel: "Тест Гуру Админ панель"
@@ -14,6 +18,12 @@ ru:
       table_count: "Всего вопросов"
 
   admin:
+    gists:
+      index:
+        header: "Список гистов"
+        table_quesction: "Вопрос"
+        table_url: "Ссылка на гист"
+        table_email: "Email пользователя"
     tests:
       index:
         header: "Список тестов"
@@ -95,6 +105,10 @@ ru:
     show:
       pass: "Пройти %{title} Тест"
       question: "Вопрос № %{number} из %{count}"
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка"
+      github: "github"
 
   shared:
     errors:

@@ -16,7 +16,7 @@
         <div>
           <%= form.label :category_id %>
           <%= form.collection_select :category_id,
-              Category.all, :id, :title, prompt: true, class: "form-select"%>
+              Category.all, :id, :title, {prompt: true}, class: "form-select"%>
         </div>
 
         <div class="actions">
