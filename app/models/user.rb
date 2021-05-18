@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :validatable
          :confirmable
 
-  validates :name, :email, presence: true
+  validates :email, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_many :gists
