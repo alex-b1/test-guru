@@ -1,11 +1,11 @@
 document.addEventListener('turbolinks:load', function () {
     var progress = document.querySelector('.test-progress');
-    var nubmer = document.querySelector('.test-progress[data-test-nubmer]');
+    var number = document.querySelector('.test-progress[data-test-number]');
     var size = document.querySelector('.test-progress[data-test-size]');
 
     if (progress) {
-        var nubmer = progress.dataset.testNumber - 1;
+        var number = progress.dataset.testNumber - 1;
         var size = progress.dataset.testSize;
-        progress.style.width = nubmer == 0 ? 0 : (Math.round(nubmer / size * 100) + '%');
+        progress.style.width = number == 0 ? 0 : (Math.round(number / size * 100) + '%');
     }
 });
