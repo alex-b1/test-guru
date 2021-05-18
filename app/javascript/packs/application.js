@@ -11,6 +11,8 @@ import "bootstrap"
 import "jquery"
 import '../utilities/sorting'
 import '../utilities/check_password'
+import '../utilities/form_inline'
+import '../utilities/progress'
 
 Rails.start()
 Turbolinks.start()

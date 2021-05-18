@@ -44,6 +44,8 @@ ru:
         table_action: "Действие"
       edit:
         header: "Редактировать тест"
+      form_inline:
+        submit: 'ОК'
     answers:
       show:
         header: "Название"
