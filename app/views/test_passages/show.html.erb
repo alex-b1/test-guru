@@ -2,7 +2,12 @@
   <div class="col col-md-8">
     <div class="h4"> <%= t('.pass', title: @test_passage.test.title) %> </div>
     <hr>
-    <div class="d-flex justify-content-between"
+    <div class="progress-wrap">
+    <%= content_tag :div, '', class: 'test-progress',
+                    data: {test_number: @test_passage.position, test_size: @test_passage.test.questions.count} %>
+    </div>
+
+    <div class="d-flex justify-content-between">
       <b><%= @test_passage.current_question.body %></b>
       <div><%= t('.question', number: @test_passage.position, count: @test_passage.test.questions.count)%> </div>
     </div>

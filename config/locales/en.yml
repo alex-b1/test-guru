@@ -55,6 +55,8 @@ en:
         header: "Create a new answer"
       edit:
         header: "Edit answer"
+      form_inline:
+        submit: 'OK'
     questions:
       show:
         header: "Title"

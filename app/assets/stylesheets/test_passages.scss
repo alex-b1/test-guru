@@ -9,3 +9,18 @@
 .fail {
   color: #ca0d11;
 }
+
+.progress-wrap {
+  position: relative;
+  width: 100%;
+  height: 5px;
+}
+
+.test-progress {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  background-color: red;
+}
