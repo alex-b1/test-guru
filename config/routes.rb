@@ -11,7 +11,9 @@ Rails.application.routes.draw do
                  registrations: "users/registrations",
                  sessions: "users/sessions",
                  passwords: "users/passwords",
+                 confirmations: "users/confirmations",
              }
+
 
   resources :tests, only: :index do
     member do
