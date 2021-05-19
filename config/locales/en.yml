@@ -1,6 +1,17 @@
 en:
   hello: "Hello world"
 
+  feedbacks:
+    mail:
+      success: "Review sent successfully"
+      fail: "Review not sent"
+    show:
+      send: "Отправить"
+      header: "Review"
+      name: "Name"
+      email: "Email"
+      comment: "Comment"
+
   services:
     gist:
       description: "A question about %{title} from TestGuru"
@@ -8,11 +19,6 @@ en:
   tests:
     index:
       header: "List of tests"
-
-  test_passages:
-    result:
-
-    show:
 
   nav:
     title: "TestGuru"
@@ -106,6 +112,7 @@ en:
       fail_test: "Test failed"
       result: "You answered - %{percent} percent!"
       to_tests: "Totests"
+      feedback: 'Оставить отзыв'
     show:
       pass: "Pass %{title} Test"
       question: "Question № %{number} of %{count}"
