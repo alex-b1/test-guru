@@ -14,6 +14,11 @@ Rails.application.routes.draw do
                  confirmations: "users/confirmations",
              }
 
+  resource :feedback, only: :show do
+    member do
+      post :mail
+    end
+  end
 
   resources :tests, only: :index do
     member do

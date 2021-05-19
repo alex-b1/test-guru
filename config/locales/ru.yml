@@ -1,6 +1,17 @@
 ru:
   hello: "Привет мир"
 
+  feedbacks:
+    mail:
+      success: "Отзыв успешно отправлен"
+      fail: "Отзыв не отправлен"
+    show:
+      send: "Отправить"
+      header: "Отзыв"
+      name: "Имя"
+      email: "Email"
+      comment: "Комментарий"
+
   services:
     gist:
       description: "Вопрос о %{title} из TestGuru"
@@ -104,6 +115,7 @@ ru:
       fail_test: "Тест не пройден"
       result: "Вы ответили на - %{percent} процентов!"
       to_tests: "Перейти к тестам"
+      feedback: 'Оставить отзыв'
     show:
       pass: "Пройти %{title} Тест"
       question: "Вопрос № %{number} из %{count}"
