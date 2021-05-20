@@ -2,26 +2,38 @@
   <div class="col col-md-8">
     <div class="h4"> <%= t('.pass', title: @test_passage.test.title) %> </div>
     <hr>
-    <div class="progress-wrap">
-    <%= content_tag :div, '', class: 'test-progress',
-                    data: {test_number: @test_passage.position, test_size: @test_passage.test.questions.count} %>
-    </div>
 
-    <div class="d-flex justify-content-between">
-      <b><%= @test_passage.current_question.body %></b>
-      <div><%= t('.question', number: @test_passage.position, count: @test_passage.test.questions.count)%> </div>
-    </div>
-    <div class="form-group mt-3">
-      <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-        <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
-          <div class="form-check">
-            <%= b.label class: "form-check-label" %>
-            <%= b.check_box id: "answer_ids#{b.object.id}", class: "form-check-input"%>
-          </div>
+    <% if @test_passage.current_question.present? %>
+
+      <div class="progress-wrap">
+      <%= content_tag :div, '', class: 'test-progress',
+                      data: {test_number: @test_passage.position, test_size: @test_passage.test.questions.count} %>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <b><%= @test_passage.current_question.body %></b>
+        <div><%= t('.question', number: @test_passage.position, count: @test_passage.test.questions.count)%> </div>
+      </div>
+      <div class="form-group mt-3">
+        <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+          <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
+            <div class="form-check">
+              <%= b.label class: "form-check-label" %>
+              <%= b.check_box id: "answer_ids#{b.object.id}", class: "form-check-input"%>
+            </div>
+          <% end %>
+          <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
+          <%= form.submit t('element.link.ahead'), class: "btn btn-primary mt-3" %>
         <% end %>
-        <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
-        <%= form.submit t('element.link.ahead'), class: "btn btn-primary mt-3" %>
+      </div>
+
+      <% else %>
+        <div> <%= t('.no_questions')%> </div>
+      <%= button_to t('element.link.back'),
+                    tests_path,
+                    class: "btn btn-secondary btn-sm mt-3",
+                    method: :get %>
       <% end %>
-    </div>
+
   </div>
 </div>

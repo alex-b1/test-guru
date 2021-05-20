@@ -119,6 +119,7 @@ ru:
     show:
       pass: "Пройти %{title} Тест"
       question: "Вопрос № %{number} из %{count}"
+      no_questions: "К сожалению вопросов к тесту еще нет"
     gist:
       success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"

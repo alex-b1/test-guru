@@ -116,6 +116,7 @@ en:
     show:
       pass: "Pass %{title} Test"
       question: "Question № %{number} of %{count}"
+      no_questions: "Unfortunately there are no questions for the test yet"
     gist:
       success: "Gist was successfully created - %{url}"
       failure: "An error occurred while saving gist"
