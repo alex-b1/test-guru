@@ -5,7 +5,7 @@
       <div class="card-body form_pass_check">
         <%=render 'shared/errors', resource: @feedback %>
 
-        <%= form_with model: @feedback, url: mail_feedback_path, local: true do |f| %>
+        <%= form_with model: @feedback, url: feedback_path, local: true do |f| %>
           <div>
             <%= f.label :name, t('.name') %>
             <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>

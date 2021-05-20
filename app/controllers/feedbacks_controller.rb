@@ -3,10 +3,10 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new
   end
 
-  def mail
+  def create
     @feedback = Feedback.new(feedback_params)
 
-    if @feedback.valid?
+    if @feedback.save
       flash[:alert] = t('.success')
       FeedbacksMailer.set_mail(@feedback).deliver_now
       redirect_to tests_path
