@@ -2,7 +2,7 @@ ru:
   hello: "Привет мир"
 
   feedbacks:
-    mail:
+    create:
       success: "Отзыв успешно отправлен"
       fail: "Отзыв не отправлен"
     show:

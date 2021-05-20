@@ -2,7 +2,7 @@ en:
   hello: "Hello world"
 
   feedbacks:
-    mail:
+    create:
       success: "Review sent successfully"
       fail: "Review not sent"
     show:
