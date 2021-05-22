@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passeage, only: %i[show update result gist]
+  before_action :set_user_badges
 
   def show; end
 
@@ -11,6 +12,10 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+      admin = Admin.first
+
+      admin.rules(current_user, @test_passage.test_id)
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
