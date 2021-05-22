@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     member do
       get :result
       post :gist
+      get :time, to: 'test_passages#time'
+      post :time_up, to: 'test_passages#time_up'
+      post :last_time, to: 'test_passages#last_time'
     end
   end
 

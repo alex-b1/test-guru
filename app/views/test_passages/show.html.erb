@@ -1,6 +1,9 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-8">
-    <div class="h4"> <%= t('.pass', title: @test_passage.test.title) %> </div>
+    <div class="d-md-flex justify-content-between">
+      <div class="h4"> <%= t('.pass', title: @test_passage.test.title) %> </div>
+      <div class="timer"></div>
+    </div>
     <hr>
 
     <% if @test_passage.current_question.present? %>
@@ -23,7 +26,7 @@
             </div>
           <% end %>
           <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
-          <%= form.submit t('element.link.ahead'), class: "btn btn-primary mt-3" %>
+          <%= form.submit t('element.link.ahead'), id: 'test-next', class: "btn btn-primary mt-3"  %>
         <% end %>
       </div>
 

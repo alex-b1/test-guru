@@ -4,6 +4,7 @@
       <%= form_with model: [:admin, @test], local: true do |form| %>
         <%= render 'shared/errors', resource: @test %>
 
+
         <div>
           <%= form.label :title %>
           <%= form.text_field :title, class: "form-control" %>
@@ -17,6 +18,11 @@
           <%= form.label :category_id %>
           <%= form.collection_select :category_id,
               Category.all, :id, :title, {prompt: true}, class: "form-select"%>
+        </div>
+
+        <div>
+          <%= form.label :execution_time, t('.execution_time') %>
+          <%= form.text_field :execution_time, class: "form-control" %>
         </div>
 
         <div class="actions">
