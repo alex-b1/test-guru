@@ -8,7 +8,9 @@
 
   <div class="nav-controls right">
     <div class="badges">
-      <div>Награды: </div>
+      <% if @user_badges.count > 0 %>
+        <div>Награды: </div>
+      <% end %>
       <% @user_badges.each do |i|%>
         <% if i.badge.level == '1' %>
           <div class="count"><%= i.count %></div>
