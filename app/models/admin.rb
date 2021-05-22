@@ -9,10 +9,11 @@ class Admin < User
     check_all_level_2(user, test_id)
   end
 
+  private
+
   def check_all_geography(user, test_id)
-    success_tests = []
+    success_tests = set_success_tests(user)
     pass_cat_geography = true
-    user.test_passages.each {|i| success_tests.push(i.test_id) if i.success? }
     Test.where(category_id: CATEGORY_GEOGRAPHY).each {|i| pass_cat_geography = false unless success_tests.include?(i.id)}
 
     rule_all_geography = Rule.find_by(title: 'all_geography')
@@ -20,13 +21,7 @@ class Admin < User
     pass_all_geography = user.rule_passages.find_by(rule_id: rule_all_geography.id)
 
     if !pass_all_geography && pass_cat_geography
-      user_badges = user.user_badges.find_by(badge_id: badge.id)
-      if user_badges
-        user_badges.count += 1
-        user_badges.save
-      else
-        user.user_badges.create(badge_id: badge.id, count: 1)
-      end
+      set_user_badges(user, badge)
       user.rule_passages.create(rule_id: rule_all_geography.id)
     end
   end
@@ -37,21 +32,13 @@ class Admin < User
     test_pass = user.test_passages.where(test_id: test_id)
 
     if test_pass&.count == 1 && test_pass[0].test.questions.count == test_pass[0].correct_questions
-      user_badges = user.user_badges.find_by(badge_id: badge.id)
-
-      if user_badges
-        user_badges.count += 1
-        user_badges.save
-      else
-        user.user_badges.create(badge_id: badge.id, count: 1)
-      end
+      set_user_badges(user, badge)
     end
   end
 
   def check_all_level_2(user, test_id)
-    success_tests = []
+    success_tests = set_success_tests(user)
     pass_level_2 = true
-    user.test_passages.each {|i| success_tests.push(i.test_id) if i.success? }
     Test.where(level: '2').each {|i| pass_level_2 = false unless success_tests.include?(i.id)}
 
     rule_all_level_2 = Rule.find_by(title: 'all_level_2')
@@ -59,19 +46,25 @@ class Admin < User
     pass_all_level_2 = user.rule_passages.find_by(rule_id: rule_all_level_2.id)
 
     if !pass_all_level_2 && pass_level_2
-      user_badges = user.user_badges.find_by(badge_id: badge.id)
-      if user_badges
-        user_badges.count += 1
-        user_badges.save
-      else
-        user.user_badges.create(badge_id: badge.id, count: 1)
-      end
+      set_user_badges(user, badge)
       user.rule_passages.create(rule_id: rule_all_level_2.id)
     end
   end
 
-  def set_user_badges
+  def set_user_badges(user, badge)
+    user_badges = user.user_badges.find_by(badge_id: badge.id)
+    if user_badges
+      user_badges.count += 1
+      user_badges.save
+    else
+      user.user_badges.create(badge_id: badge.id, count: 1)
+    end
+  end
 
+  def set_success_tests(user)
+    success_tests = []
+    user.test_passages.each {|i| success_tests.push(i.test_id) if i.success? }
+    success_tests
   end
 
 end
