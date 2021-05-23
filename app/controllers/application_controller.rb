@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user_badges
-    @user_badges = UserBadge.where(user_id: current_user.id)
+    @user_badges = UserBadge.where(user_id: current_user&.id)
+
   end
 end
