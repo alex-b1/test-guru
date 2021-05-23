@@ -13,13 +13,16 @@ categories = Category.create([
     {title: 'Химия'},
 ])
 
-tests = Test.create([
+tests = Test.create!([
     {title: 'Города', level: 1, category_id: categories[0].id},
     {title: 'Животные', level: 2, category_id: categories[1].id},
     {title: 'Вещества', level: 1, category_id: categories[2].id},
     {title: 'Страны', level: 2, category_id: categories[0].id},
     {title: 'Реки', level: 3, category_id: categories[0].id},
 ])
+
+p '----------'
+p tests
 
 
 questions = Question.create([
@@ -52,21 +55,3 @@ answers = Answer.create([
     {title: 'Волга', correct: false, question_id: questions[4].id},
     {title: 'Хуанхэ', correct: false, question_id: questions[4].id},
 ])
-
-users = User.create([
-    {name: 'Alex', role: 'student'},
-    {name: 'Jon', role: 'student'},
-    {name: 'Inav', role: 'admin'},
-])
-
-students = users.select { |i| i.role == 'student'}
-
-completed_tests = []
-
-students.each do |i|
-  tests.each do |j|
-    completed_tests.push({result: [true, false].sample, test_id: j.id, user_id: i.id})
-  end
-end
-
-completed_tests.each { |i| CompletedTest.create(i) }
