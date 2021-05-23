@@ -57,6 +57,8 @@ ru:
         header: "Редактировать тест"
       form_inline:
         submit: 'ОК'
+      form:
+        execution_time: "Время выполнения (в минутах)"
     answers:
       show:
         header: "Название"

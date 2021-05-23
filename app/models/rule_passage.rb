@@ -1,0 +1,2 @@
+class RulePassage < ApplicationRecord
+end
