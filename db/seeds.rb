@@ -6,6 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
+#
+badges = Badge.create([
+  {title: 'first', level: '1', file_name: 'medal-1.png'},
+  {title: 'second', level: '2', file_name: 'medal-2.png'},
+  {title: 'third', level: '3', file_name: 'medal-3.png'},
+])
+
+rules= Rule.create([
+   {title: 'all_geography', description: 'Выдать бэйдж после успешного прохождения всех тестов из категории География'},
+   {title: 'first_attempt', description: 'Выдать бэйдж после успешного прохождения теста с первой попытки'},
+   {title: 'all_level_2', description: 'Выдать бэйдж после успешного прохождения всех тестов 2ого уровня'},
+])
 
 categories = Category.create([
     {title: 'География'},

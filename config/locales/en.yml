@@ -1,6 +1,10 @@
 en:
   hello: "Hello world"
 
+  badges:
+    show:
+      header: "Badges"
+
   feedbacks:
     create:
       success: "Review sent successfully"
@@ -127,6 +131,10 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      badge: "Badges"
+      login: "Log in"
+      signup: "Sign up"
 
   tests_mailer:
     completed_test:

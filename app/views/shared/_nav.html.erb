@@ -1,41 +1,25 @@
 <nav class="navbar navbar-light bg-light px-3">
   <div>
-    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand nav-link' %>
     <% if current_user&.admin? %>
       <%= link_to 'AdminPanel', admin_tests_path, class: 'navbar-brand' %>
     <% end %>
   </div>
 
   <div class="nav-controls right">
-    <div class="badges">
-      <% if @user_badges.count > 0 %>
-        <div>Награды: </div>
-      <% end %>
-      <% @user_badges.each do |i|%>
-        <% if i.badge.level == '1' %>
-          <div class="count"><%= i.count %></div>
-          <%= image_tag(i.badge.file_name, size: "20x20") %>
-        <% end %>
-        <% if i.badge.level == '2' %>
-          <div class="count"><%= i.count %></div>
-          <%= image_tag(i.badge.file_name, size: "20x20") %>
-        <% end %>
-        <% if i.badge.level == '3' %>
-          <div class="count"><%= i.count %></div>
-          <%= image_tag(i.badge.file_name, size: "20x20") %>
-        <% end %>
-      <% end %>
-    </div>
+    <% if current_user.present? %>
+      <%= link_to t('.badge'), badge_path, class: "nav-link"%>
+    <% end %>
     <% if user_signed_in? %>
-      <div class="container-fluid">
+      <div class="container-fluid my-auto">
         Welcome, <b><%= current_user.first_name %></b> |
         <div class="d-inline-block">
           <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-secondary btn-sm"%>
         </div>
       </div>
     <% else %>
-      <%= link_to "Log in", new_session_path(resource_name) %> |
-      <%= link_to "Sign Up", new_registration_path(resource_name) %>
+      <%= link_to t('.login'), new_session_path(resource_name), class: "nav-link" %>
+      <%= link_to t('.signup'), new_registration_path(resource_name), class: "nav-link" %>
     <% end %>
   </div>
 </nav>
