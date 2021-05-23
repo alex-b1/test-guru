@@ -17,8 +17,6 @@ class TestPassagesController < ApplicationController
 
   def time_up
     TestsMailer.completed_test(@test_passage).deliver_now
-    admin = Admin.first
-    admin.rules(current_user, @test_passage.test_id)
 
     render json: {result: result_test_passage_path(@test_passage)}
   end
