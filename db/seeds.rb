@@ -21,10 +21,6 @@ tests = Test.create!([
     {title: 'Реки', level: 3, category_id: categories[0].id},
 ])
 
-p '----------'
-p tests
-
-
 questions = Question.create([
     {body: 'Столица Италии?', test_id: tests[0].id},
     {body: 'Сколько ног у паука?', test_id: tests[1].id},
