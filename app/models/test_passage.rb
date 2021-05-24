@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
+  def passed_time(test_passage)
+    (test_passage.created_at + test_passage.test.execution_time.to_i * 60) - Time.now
+  end
+
   private
 
   def before_validation_set_question

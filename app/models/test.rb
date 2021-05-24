@@ -1,7 +1,6 @@
 class Test < ApplicationRecord
   validates :title, presence: true, uniqueness: {scope: :level}
   validates :level, numericality: {only_integer: true, greater_than: 0}
-  validates :execution_time, presence: true
 
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy

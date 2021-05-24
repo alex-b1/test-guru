@@ -2,7 +2,12 @@
   <div class="col col-md-8">
     <div class="d-md-flex justify-content-between">
       <div class="h4"> <%= t('.pass', title: @test_passage.test.title) %> </div>
-      <div class="timer"></div>
+      <%= content_tag :div,
+          '',
+          class: "timer",
+          data: { timer: @test_passage.passed_time(@test_passage), id: @test_passage.id }
+      %>
+
     </div>
     <hr>
 
