@@ -31,6 +31,8 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
+  scope :success_tests, -> {where(result: true).pluck(:test_id).uniq}
+
   private
 
   def before_validation_set_question

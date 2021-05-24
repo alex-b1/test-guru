@@ -14,9 +14,9 @@ badges = Badge.create([
 ])
 
 rules= Rule.create([
-   {title: 'all_geography', description: 'Выдать бэйдж после успешного прохождения всех тестов из категории География'},
-   {title: 'first_attempt', description: 'Выдать бэйдж после успешного прохождения теста с первой попытки'},
-   {title: 'all_level_2', description: 'Выдать бэйдж после успешного прохождения всех тестов 2ого уровня'},
+   {title: 'all_geography', description: 'Выдать бэйдж после успешного прохождения всех тестов из категории География', badge_id: badges[0].id},
+   {title: 'first_attempt', description: 'Выдать бэйдж после успешного прохождения теста с первой попытки', badge_id: badges[1].id},
+   {title: 'all_level_2', description: 'Выдать бэйдж после успешного прохождения всех тестов 2ого уровня', badge_id: badges[0].id},
 ])
 
 categories = Category.create([

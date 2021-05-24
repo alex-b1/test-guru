@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2021_05_24_101308) do
   create_table "rule_passages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "rule_id", null: false
-    t.boolean "passed", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["rule_id"], name: "index_rule_passages_on_rule_id"
@@ -153,6 +152,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_101308) do
   add_foreign_key "questions", "tests"
   add_foreign_key "rule_passages", "rules"
   add_foreign_key "rule_passages", "users"
+  add_foreign_key "rules", "badges"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
