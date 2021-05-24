@@ -11,8 +11,11 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
-      badge_service = BadgeService.new
-      badge_service.rules(current_user)
+      @test_passage.result = !!@test_passage.success?
+      @test_passage.save
+
+      badge_service = BadgeService.new(current_user, @test_passage)
+      badge_service.rules
 
       redirect_to result_test_passage_path(@test_passage)
     else
