@@ -15,7 +15,7 @@ class BadgeService
   private
 
   def all_geography_rule(rule)
-    success_tests = TestPassage.success_tests
+    success_tests = TestPassage.success_tests(@user.id).pluck(:test_id).uniq
     tests_geography = Test.where(category_id: CATEGORY_GEOGRAPHY).pluck(:id)
     pass_cat_geography = (tests_geography - success_tests).empty?
     pass_all_geography = @user.rule_passages.find_by(rule_id: rule.id)
@@ -30,7 +30,7 @@ class BadgeService
   end
 
   def all_level_2_rule(rule)
-    success_tests = TestPassage.success_tests
+    success_tests = TestPassage.success_tests(@user.id).pluck(:test_id).uniq
     tests_level_2 = Test.where(level: '2').pluck(:id)
     pass_level_2 = (tests_level_2 - success_tests).empty?
     pass_all_level_2 = @user.rule_passages.find_by(rule_id: rule.id)

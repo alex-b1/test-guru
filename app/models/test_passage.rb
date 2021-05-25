@@ -31,7 +31,7 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
-  scope :success_tests, -> {where(result: true).pluck(:test_id).uniq}
+  scope :success_tests, -> (user_id) {where(result: true, user_id: user_id)}
 
   private
 
