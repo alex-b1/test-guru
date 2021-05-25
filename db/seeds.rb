@@ -6,6 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
+#
+badges = Badge.create([
+  {title: 'first', level: '1', file_name: 'medal-1.png'},
+  {title: 'second', level: '2', file_name: 'medal-2.png'},
+  {title: 'third', level: '3', file_name: 'medal-3.png'},
+])
+
+rules= Rule.create([
+   {title: 'all_geography', description: 'Выдать бэйдж после успешного прохождения всех тестов из категории География', badge_id: badges[0].id},
+   {title: 'first_attempt', description: 'Выдать бэйдж после успешного прохождения теста с первой попытки', badge_id: badges[1].id},
+   {title: 'all_level_2', description: 'Выдать бэйдж после успешного прохождения всех тестов 2ого уровня', badge_id: badges[0].id},
+])
 
 categories = Category.create!([
     {title: 'География'},
@@ -14,19 +26,19 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
+    {title: 'Города', level: 1, category_id: categories[0].id},
+    {title: 'Животные', level: 2, category_id: categories[1].id},
+    {title: 'Вещества', level: 1, category_id: categories[2].id},
+    {title: 'Страны', level: 2, category_id: categories[0].id},
+    {title: 'Реки', level: 3, category_id: categories[0].id},
+])
+
+questions = Question.create([
     {title: 'Города', level: 1, category_id: categories[0].id, execution_time: 1},
     {title: 'Животные', level: 2, category_id: categories[1].id, execution_time: 1},
     {title: 'Вещества', level: 1, category_id: categories[2].id, execution_time: 1},
     {title: 'Страны', level: 2, category_id: categories[0].id, execution_time: 1},
     {title: 'Реки', level: 3, category_id: categories[0].id, execution_time: 2},
-])
-
-questions = Question.create!([
-    {body: 'Столица Италии?', test_id: tests[0].id},
-    {body: 'Сколько ног у паука?', test_id: tests[1].id},
-    {body: '7 элемент таблицы Менделеева', test_id: tests[2].id},
-    {body: 'Самая маленькая страна?', test_id: tests[3].id},
-    {body: 'Самая длинная река?', test_id: tests[4].id},
 ])
 
 answers = Answer.create!([

@@ -13,7 +13,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
-      self.correct_questions +=1
+      self.correct_questions += 1
     end
 
     save!
@@ -30,6 +30,8 @@ class TestPassage < ApplicationRecord
   def position
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
+
+  scope :success_tests, -> (user_id) {where(result: true, user_id: user_id)}
 
   def passed_time(test_passage)
     (test_passage.created_at + test_passage.test.execution_time.to_i * 60) - Time.now
@@ -53,7 +55,7 @@ class TestPassage < ApplicationRecord
     if new_record?
       test.questions.first
     else
-      test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question&.id).first
     end
   end
 end
