@@ -19,7 +19,7 @@ rules= Rule.create([
    {title: 'all_level_2', description: 'Выдать бэйдж после успешного прохождения всех тестов 2ого уровня', badge_id: badges[0].id},
 ])
 
-categories = Category.create([
+categories = Category.create!([
     {title: 'География'},
     {title: 'Биология'},
     {title: 'Химия'},
@@ -34,14 +34,14 @@ tests = Test.create!([
 ])
 
 questions = Question.create([
-    {body: 'Столица Италии?', test_id: tests[0].id},
-    {body: 'Сколько ног у паука?', test_id: tests[1].id},
-    {body: '7 элемент таблицы Менделеева', test_id: tests[2].id},
-    {body: 'Самая маленькая страна?', test_id: tests[3].id},
-    {body: 'Самая длинная река?', test_id: tests[4].id},
+    {title: 'Города', level: 1, category_id: categories[0].id, execution_time: 1},
+    {title: 'Животные', level: 2, category_id: categories[1].id, execution_time: 1},
+    {title: 'Вещества', level: 1, category_id: categories[2].id, execution_time: 1},
+    {title: 'Страны', level: 2, category_id: categories[0].id, execution_time: 1},
+    {title: 'Реки', level: 3, category_id: categories[0].id, execution_time: 2},
 ])
 
-answers = Answer.create([
+answers = Answer.create!([
     {title: 'Рим', correct: true, question_id: questions[0].id},
     {title: 'Венеция', correct: false, question_id: questions[0].id},
     {title: 'Неаполь', correct: false, question_id: questions[0].id},

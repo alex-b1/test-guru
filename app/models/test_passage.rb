@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
 
   scope :success_tests, -> (user_id) {where(result: true, user_id: user_id)}
 
+  def passed_time(test_passage)
+    (test_passage.created_at + test_passage.test.execution_time.to_i * 60) - Time.now
+  end
+
   private
 
   def before_validation_set_question

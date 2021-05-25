@@ -8,8 +8,9 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
+    passed_time = @test_passage.passed_time(@test_passage)
 
-    if @test_passage.completed?
+    if @test_passage.completed? || passed_time < 0
       TestsMailer.completed_test(@test_passage).deliver_now
 
       if @test_passage.success?
