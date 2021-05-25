@@ -7,22 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
-categories = Category.create([
+categories = Category.create!([
     {title: 'География'},
     {title: 'Биология'},
     {title: 'Химия'},
 ])
 
-tests = Test.create([
-    {title: 'Города', level: 1, category_id: categories[0].id},
-    {title: 'Животные', level: 2, category_id: categories[1].id},
-    {title: 'Вещества', level: 1, category_id: categories[2].id},
-    {title: 'Страны', level: 2, category_id: categories[0].id},
-    {title: 'Реки', level: 3, category_id: categories[0].id},
+tests = Test.create!([
+    {title: 'Города', level: 1, category_id: categories[0].id, execution_time: 1},
+    {title: 'Животные', level: 2, category_id: categories[1].id, execution_time: 1},
+    {title: 'Вещества', level: 1, category_id: categories[2].id, execution_time: 1},
+    {title: 'Страны', level: 2, category_id: categories[0].id, execution_time: 1},
+    {title: 'Реки', level: 3, category_id: categories[0].id, execution_time: 2},
 ])
 
-
-questions = Question.create([
+questions = Question.create!([
     {body: 'Столица Италии?', test_id: tests[0].id},
     {body: 'Сколько ног у паука?', test_id: tests[1].id},
     {body: '7 элемент таблицы Менделеева', test_id: tests[2].id},
@@ -30,7 +29,7 @@ questions = Question.create([
     {body: 'Самая длинная река?', test_id: tests[4].id},
 ])
 
-answers = Answer.create([
+answers = Answer.create!([
     {title: 'Рим', correct: true, question_id: questions[0].id},
     {title: 'Венеция', correct: false, question_id: questions[0].id},
     {title: 'Неаполь', correct: false, question_id: questions[0].id},
@@ -52,21 +51,3 @@ answers = Answer.create([
     {title: 'Волга', correct: false, question_id: questions[4].id},
     {title: 'Хуанхэ', correct: false, question_id: questions[4].id},
 ])
-
-users = User.create([
-    {name: 'Alex', role: 'student'},
-    {name: 'Jon', role: 'student'},
-    {name: 'Inav', role: 'admin'},
-])
-
-students = users.select { |i| i.role == 'student'}
-
-completed_tests = []
-
-students.each do |i|
-  tests.each do |j|
-    completed_tests.push({result: [true, false].sample, test_id: j.id, user_id: i.id})
-  end
-end
-
-completed_tests.each { |i| CompletedTest.create(i) }
